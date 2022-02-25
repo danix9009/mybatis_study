@@ -6,6 +6,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,6 +20,8 @@ import java.io.InputStream;
  * @See
  */
 public class Demo {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Demo.class);
+
     public static void main(String[] args) throws IOException {
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -25,7 +29,7 @@ public class Demo {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
         Blog blog = mapper.selectById(1L);
-        System.out.println(blog);
+        LOGGER.info("blog: {}", blog);
 
         sqlSession.close();
         inputStream.close();

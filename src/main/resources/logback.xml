@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration  scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="BASE_LOG_HOME" value="/usr/local/src/logs" />
+    <property name="APP_NAME" value="mybatis_demo" />
+    <property name="LOG_HOME" value="${BASE_LOG_HOME}/${APP_NAME}" />
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread- %X{traceId}] %-5level %logger{36} - %msg%n" />
+    <contextName>logback</contextName>
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="console" />
+    </root>
+
+</configuration>
