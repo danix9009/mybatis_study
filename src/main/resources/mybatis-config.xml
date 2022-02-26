@@ -7,8 +7,8 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <plugins>
-        <plugin interceptor="com.franky.mybatis.example.interceptor.FirstInterceptor"></plugin>
-        <plugin interceptor="com.franky.mybatis.example.interceptor.SecondInterceptor"></plugin>
+        <plugin interceptor="com.franky.mybatis.example.interceptor.FirstInterceptor"/>
+        <plugin interceptor="com.franky.mybatis.example.interceptor.SecondInterceptor"/>
     </plugins>
     <environments default="development">
         <environment id="development">
